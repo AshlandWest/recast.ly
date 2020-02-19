@@ -1,24 +1,17 @@
-import exampleVideoData from '././data/exampleVideoData.js';
+import VideoListEntry from './VideoListEntry.js';
 
-class VideoList extends React.Component {
-  constructor(props) {
-    super(props);
-
-
-  }
-  render() {
-    return (
-      <li>{this.props.video}</li>
-    );
-  }
-}
-var MyVideoList = (props) => (
-  <ul>
-    {props.exampleVideoData.map((video) =>
-      <VideoList VideoListEntry={video} />
-    )}
-  </ul>
+var VideoList = (props) => (
+  <div className="video-list">
+    ${props.list.map(video => <VideoListEntry entry = {video} />)}
+    {/* <div><h5><em>videoListEntry</em> view goes here</h5></div>
+    <div><h5><em>videoListEntry</em> view goes here</h5></div>
+    <div><h5><em>videoListEntry</em> view goes here</h5></div>
+    <div><h5><em>videoListEntry</em> view goes here</h5></div>
+    <div><h5><em>videoListEntry</em> view goes here</h5></div> */}
+  </div>
 );
+
+
 
 
 // PropTypes tell other developers what `props` a component expects
@@ -39,5 +32,4 @@ export default VideoList;
 //     <div><h5><em>videoListEntry</em> view goes here</h5></div>
 //   </div>
 // );
-
 
